@@ -1,6 +1,6 @@
 from typing import Set
 
-from talon import Module, Context, actions
+from talon import Module, Context, actions, ctrl
 import sys
 
 default_alphabet = "arm blue cry drum east fly gun hike ivy july kiss look made near oil pile quake red sun tea utah vest will plex yank zip".split(
@@ -236,4 +236,10 @@ class Actions:
     def get_alphabet() -> dict:
         """Provides the alphabet dictionary"""
         return alphabet
+
+    def press_alt(t: str):
+        """Presses alt"""
+        ctrl.key_press('alt', down=True, alt=True)
+        actions.sleep(t)
+        ctrl.key_press('alt', up=True, alt=True)
 
