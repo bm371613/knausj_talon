@@ -6,6 +6,11 @@ tag(): user.multiple_cursors
 tag(): user.splits 
 tag(): user.tabs
 
+rollback:
+    key(ctrl-alt-z)
+fix it: key(alt-enter)
+ace jump: key(ctrl-;)
+
 #talon app actions (+custom tab actions)
 action(user.tab_final): user.idea("action GoToLastTab")
 action(app.tab_next): user.idea("action NextTab")

@@ -25,7 +25,7 @@ rerun <user.text>:
   insert(text)
 rerun search:
   key(ctrl-r)
-kill all:
+interrupt:
   key(ctrl-c)
 
 # XXX - these are specific to certain terminals only and should move into their

@@ -130,7 +130,7 @@ ctx.lists["self.symbol"] = {
     "caret": "^",
     "at sign": "@",
     "ampersand": "&",
-    "amper": "&",
+    "and sign": "&",
     "pipe": "|",
     "double quote": '"',
 }
@@ -158,7 +158,6 @@ simple_keys = [
 
 alternate_keys = {
     "backspace": "backspace",
-    "no": "backspace",
     "delete": "delete",
     #'junk': 'backspace',
 }

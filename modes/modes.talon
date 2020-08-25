@@ -3,7 +3,6 @@ mode: all
 -
 welcome back:
     user.mouse_wake()
-    user.history_enable()
     speech.enable()
 sleep all:
     user.switcher_hide_running()
@@ -15,8 +14,6 @@ sleep all:
     user.engine_sleep()
 talon sleep: speech.disable()
 talon wake: speech.enable()
-dragon mode: speech.disable()
-talon mode: speech.enable()
 ^dictation mode$:
     mode.disable("sleep")
     mode.disable("command")

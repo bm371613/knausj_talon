@@ -1,0 +1,4 @@
+app: konsole
+
+-
+tag(): terminal
