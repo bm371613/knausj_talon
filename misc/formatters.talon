@@ -1,13 +1,13 @@
 #provide both anchored and unachored commands via 'over'
-(say | speak | phrase) <user.text>$: 
+say <user.text>$:
   result = user.formatted_text(text, "NOOP")
   insert(result)
-(say | speak | phrase) <user.text> over: 
+say <user.text> over:
   result = user.formatted_text(text, "NOOP")
   insert(result)
 <user.format_text>$: insert(format_text)
 <user.format_text> over: insert(format_text)
-word <user.word>: insert(user.word)
+token <user.word>: insert(user.word)
 format help: user.formatters_help_toggle()
 format recent: user.formatters_recent_toggle()
 format repeat <number>: 

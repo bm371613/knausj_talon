@@ -82,6 +82,7 @@ def update_lists():
 
     for override in overrides:
         running[override] = overrides[override]
+        launch[override] = overrides[override]
 
     if app.platform == "mac":
         for base in (
