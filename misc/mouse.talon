@@ -2,7 +2,7 @@ control mouse: user.mouse_toggle_control_mouse()
 zoom mouse: user.mouse_toggle_zoom_mouse()
 camera overlay: user.mouse_toggle_camera_overlay()
 run calibration: user.mouse_calibrate()	
-touch: 
+press:
 	mouse_click(0)
 	# close the mouse grid if open
 	user.grid_close()
@@ -12,7 +12,7 @@ righty:
 	# close the mouse grid if open
 	user.grid_close()
 
-midclick: 
+central:
 	mouse_click(2)
 	# close the mouse grid
 	user.grid_close()
@@ -101,3 +101,11 @@ wheel tiny right here:
 curse yes: user.mouse_show_cursor()
 curse no: user.mouse_hide_cursor()
 copy mouse position: user.copy_mouse_position()
+scroll [down]: mouse_scroll(20)
+scroll up: mouse_scroll(-20)
+scroll left: mouse_scroll(0, -20)
+scroll right: mouse_scroll(0, 20)
+tiny scroll [down]: mouse_scroll(5)
+tiny scroll up: mouse_scroll(-5)
+tiny scroll left: mouse_scroll(0, -5)
+tiny scroll right: mouse_scroll(0, 5)

@@ -27,6 +27,8 @@ rerun search:
   key(ctrl-r)
 kill all:
   key(ctrl-c)
+interrupt:
+  key(ctrl-c)
 
 # XXX - these are specific to certain terminals only and should move into their
 # own <term name>.talon file

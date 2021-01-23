@@ -71,3 +71,11 @@ class Actions:
         """Show less history"""
         global hist_more
         hist_more = False
+
+    def history_repeat_last_command():
+        """Repeat last command"""
+        global history
+        if len(history) >= 2:
+            last = history[-2]
+            history = history[:-2]
+            speech_system.engine_mimic(last)

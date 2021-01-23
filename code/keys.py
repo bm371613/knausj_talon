@@ -1,9 +1,9 @@
 from typing import Set
 
-from talon import Module, Context, actions, app
+from talon import Module, Context, actions, app, ctrl
 import sys
 
-default_alphabet = "air bat cap drum each fine gust harp sit jury crunch look made near odd pit quench red sun trap urge vest whale plex yank zip".split(
+default_alphabet = "arm blue cry drum east fly gun hike ivy july kiss look made near oil pile quake red sun tea utah vest will plex yank zip".split(
     " "
 )
 letters_string = "abcdefghijklmnopqrstuvwxyz"
@@ -107,7 +107,7 @@ def letters(m) -> str:
 ctx = Context()
 ctx.lists["self.modifier_key"] = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
-    "alt": "alt",  #'alter': 'alt',
+    # "alt": "alt",  #'alter': 'alt',
     "command": "cmd",
     "control": "ctrl",  #'troll':   'ctrl',
     "option": "alt",
@@ -144,11 +144,9 @@ punctuation_words = {
 }
 symbol_key_words = {
     "dot": ".",
+    "semi": ";",
     "quote": "'",
-    "L square": "[",
-    "left square": "[",
     "square": "[",
-    "R square": "]",
     "right square": "]",
     "slash": "/",
     "backslash": "\\",
@@ -159,30 +157,17 @@ symbol_key_words = {
     "tilde": "~",
     "bang": "!",
     "dollar": "$",
-    "down score": "_",
     "under score": "_",
+    "colon": ":",
     "paren": "(",
-    "L paren": "(",
-    "left paren": "(",
-    "R paren": ")",
     "right paren": ")",
-    "brace": "{",
-    "left brace": "{",
-    "R brace": "}",
-    "right brace": "}",
-    "angle": "<",
-    "left angle": "<",
+    "curly": "{",
+    "right curly": "}",
     "less than": "<",
-    "rangle": ">",
-    "R angle": ">",
-    "right angle": ">",
     "greater than": ">",
-    "star": "*",
-    "pound": "#",
     "hash": "#",
     "percent": "%",
     "caret": "^",
-    "amper": "&",
     "pipe": "|",
     "dubquote": '"',
     "double quote": '"',
@@ -213,9 +198,8 @@ simple_keys = [
 ]
 
 alternate_keys = {
-    "delete": "backspace",
-    "forward delete": "delete",
-    #'junk': 'backspace',
+    "backspace": "backspace",
+    "delete": "delete",
 }
 # mac apparently doesn't have the menu key.
 if app.platform in ("windows", "linux"):
@@ -234,4 +218,10 @@ class Actions:
     def get_alphabet() -> dict:
         """Provides the alphabet dictionary"""
         return alphabet
+
+    def press_alt(t: str):
+        """Presses alt"""
+        ctrl.key_press('alt', down=True, alt=True)
+        actions.sleep(t)
+        ctrl.key_press('alt', up=True, alt=True)
 

@@ -19,3 +19,6 @@ format copy <number>:
 ^nope that was <user.formatters>$:
   user.formatters_clear_last()
   insert(user.formatters_reformat_last(user.formatters))
+say <user.text>$: user.insert_formatted(text, "NOOP")
+say <user.text> over: user.insert_formatted(text, "NOOP")
+token <user.word>: insert(user.word)
